@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import RedditLogo from '../public/RedditLogo.png'
 import RedditLogoGuy from '../public/RedditLogoGuy.png'
+import KarmaIcon from '../public/KarmaIcon.png'
 import { 
     ChevronDownIcon, 
     HomeIcon,
@@ -90,7 +91,26 @@ function Header() {
                             alt='Reddit Logo Icon Head Only'
                         />
                     </div>
-                    <p className='text-gray-400'>Sign Out</p>
+                    <div className='flex-1 text-xs'>
+                        <p className='truncate'>{session?.user?.name}</p>
+                        <div className='flex gap-1 items-center'>
+                            <Image 
+                                height={12}
+                                width={12}
+                                objectFit='contain'
+                                src={KarmaIcon}
+                                alt='Karma Icon' 
+                            />
+                                
+                            <p className='text-gray-400'>1 Karma</p>  
+                            <div>
+                                <ChevronDownIcon className='h-5 w-5 flex-shrink-0 text-gray-400' />                      
+                            </div>
+                        </div>
+
+                    </div>
+
+                            
             </div>
         ) : (
             <div
