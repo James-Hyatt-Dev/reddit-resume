@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import PostBox from '../components/PostBox'
 // import Image from 'next/image'
 
 const Home: NextPage = () => {
@@ -10,11 +11,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <main>
+      {/* PostBox */}
+      <PostBox />
 
-
-
-      </main>
+      <div>
+        {/* Feed */}
+      </div>
       
     </div>
   )
