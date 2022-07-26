@@ -3,6 +3,7 @@ import React from 'react'
 import RedditLogo from '../public/RedditLogo.png'
 import RedditLogoGuy from '../public/RedditLogoGuy.png'
 import KarmaIcon from '../public/KarmaIcon.png'
+import Link from 'next/link'
 import { 
     ChevronDownIcon, 
     HomeIcon,
@@ -28,15 +29,18 @@ function Header() {
   return (
     <div className='flex items-center bg-white px-4 py-2 shadow-sm sticky top-0 z-50'>
 
-        <div className='relative h-10 w-20 flex-shrink-0'>
+        <div className='relative h-10 w-20 flex-shrink-0 cursor-pointer'>
             {/* Reddit Logo in Header */}
-            <Image 
-                objectFit='contain'
-                src={RedditLogo} 
-                alt='Reddit color logo with Reddit'
-                layout='fill'
-                priority        
-            />
+            <Link href="/" >
+                <Image 
+                    objectFit='contain'
+                    src={RedditLogo} 
+                    alt='Reddit color logo with Reddit'
+                    layout='fill'
+                    priority        
+                />
+            </Link>
+                
         </div>
 
         {/* Home icon and text within header */}
