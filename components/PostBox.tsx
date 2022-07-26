@@ -8,7 +8,6 @@ import toast from 'react-hot-toast'
 import { ADD_POST, ADD_SUBREDDIT } from '../graphql/mutations'
 import {
   GET_ALL_POSTS,
-  GET_SUBREDDITS_WITH_LIMIT,
   GET_SUBREDDIT_BY_TOPIC,
 } from '../graphql/queries'
 import Avatar from './Avatar'
@@ -34,8 +33,7 @@ function PostBox({ subreddit }: Props) {
       'getPostList',
       GET_SUBREDDIT_BY_TOPIC,
       'getPostListByTopic',
-      GET_SUBREDDITS_WITH_LIMIT,
-      'getSubredditListLimit',
+     
     ],
   })
 

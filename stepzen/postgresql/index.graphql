@@ -138,6 +138,21 @@ type Query {
       """
       configuration: "postgresql_config"
     )
+
+  # custom quiry for this application
+  getPostListByTopic(topic: String!): [Post]
+    @dbquery(
+      type: "postgresql"
+      query: """
+      SELECT *, "post".id as id
+      FROM "post"
+      JOIN "subreddit" on "subreddit"."id" = "post"."subreddit_id"
+      WHERE "subreddit"."topic" = $1
+      ORDER BY "post"."created_at" desc
+      """
+      configuration: "postgresql_config"
+    )
+
   getSubredditList: [Subreddit]
     @dbquery(
       type: "postgresql"
