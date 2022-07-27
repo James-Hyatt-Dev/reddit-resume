@@ -46,7 +46,7 @@ function PostBox({ subreddit }: Props) {
   } = useForm<FormData>()
 
   const onSubmit = handleSubmit(async (formData) => {
-    console.log('Fetching subreddit')
+    // console.log('Fetching subreddit')
     const notification = toast.loading('Creating new Post...')
 
     try {
@@ -133,7 +133,7 @@ function PostBox({ subreddit }: Props) {
   return (
     <form
       onSubmit={onSubmit}
-      className="sticky top-16 z-50 rounded-md border border-gray-300 bg-white p-2"
+      className="sticky top-20 z-50 rounded-md border border-gray-300 bg-white p-2"
     >
       <div className="flex items-center space-x-3">
         <Avatar />
