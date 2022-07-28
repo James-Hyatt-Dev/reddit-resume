@@ -15,7 +15,7 @@ function Feed({ topic }: Props) {
           topic: topic,
         },
       })
-  // console.log(data)
+  console.log(data)
 
   const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic
 

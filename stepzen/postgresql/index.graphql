@@ -128,7 +128,6 @@ type Query {
       type: "postgresql"
       query: """
       select * from "comment" where "post_id" = $1 and "username" = $2
-      order by "created_at" desc
       """
       configuration: "postgresql_config"
     )
@@ -144,6 +143,7 @@ type Query {
       query: """
       select *, "post".id as id from "post"
       join "subreddit" on "subreddit"."id" = "post"."subreddit_id"
+      order by "post"."created_at" desc
       """
       configuration: "postgresql_config"
     )
@@ -153,7 +153,6 @@ type Query {
       query: """
       select *, "post".id as id from "post"
       where "post"."id" = $1
-      order by "created_at" desc
       """
       configuration: "postgresql_config"
     )

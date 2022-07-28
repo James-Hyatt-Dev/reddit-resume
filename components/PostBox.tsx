@@ -126,9 +126,9 @@ function PostBox({ subreddit }: Props) {
         id: notification,
       })
     }
+
   })
 
-  console.log(subreddit)
 
   return (
     <form
